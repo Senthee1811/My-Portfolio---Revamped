@@ -1,0 +1,75 @@
+import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
+import "./globals.css";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import FloatingThemeToggle from "@/components/theme/FloatingThemeToggle";
+import ViewerCount from "@/components/presence/ViewerCount";
+import SpotifyRail from "@/components/spotify/SpotifyRail";
+import FloatingRail from "@/components/ui/FloatingRail";
+import HelloSplash from "@/components/ui/HelloSplash";
+import PageBackground from "@/components/ui/PageBackground";
+import ConsoleGreeting from "@/components/ui/ConsoleGreeting";
+import TemplateCredit from "@/components/ui/TemplateCredit";
+import CursorFollower from "@/components/ui/CursorFollower";
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://senthee.dev"),
+  title: "Sentheepan Ellankovan | Portfolio",
+  description: "Full-Stack Developer · MERN & Next.js Specialist · AI Integration Enthusiast · Scalable Web Architectures",
+  openGraph: {
+    title: "Sentheepan Ellankovan | Portfolio",
+    description: "Full-Stack Developer · MERN & Next.js Specialist · AI Integration Enthusiast · Scalable Web Architectures",
+    siteName: "Sentheepan Ellankovan",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sentheepan Ellankovan | Portfolio",
+    description: "Full-Stack Developer · MERN & Next.js Specialist · AI Integration Enthusiast · Scalable Web Architectures",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className={dmSans.variable} suppressHydrationWarning>
+      <body className={`${dmSans.className} min-h-screen antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          {/* Decorative dot-grid / glow / grain background (see .page-bg) */}
+          <PageBackground />
+          {/* DevTools console easter egg */}
+          <ConsoleGreeting />
+          {/* Required template credit (see LICENSE) */}
+          <TemplateCredit />
+          {/* Desktop: Figma-style "You" cursor with typing hover bubbles */}
+          <CursorFollower />
+          {children}
+
+          {/* Floating rail, bottom-right: live viewers, Spotify, theme toggle */}
+          <FloatingRail>
+            <ViewerCount />
+            <SpotifyRail />
+            <FloatingThemeToggle />
+          </FloatingRail>
+
+          {/* iOS-style "hola" splash, plays on every load */}
+          <HelloSplash />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
