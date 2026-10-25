@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sentheepan Ellankovan ("Senthee") — Personal Portfolio
+
+A production-grade personal portfolio built with **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**, and **GSAP**, faithfully reproducing the 3-column interaction model, iOS App Store aesthetic, and motion system of [jmancheta.cloud](https://www.jmancheta.cloud).
+
+---
+
+## Features
+
+- **3-Column Independent Desktop Scroller**: Profile, Work, and Proof columns scroll independently with native velocity; the document body remains fixed on desktop and seamlessly stacks on mobile screens.
+- **iOS "hello" Splash Screen**: Tri-lingual welcome message cycling through `hello` → `வணக்கம்` (Tamil) → `ආයුබෝවන්` (Sinhala) with clip-path wipe animation.
+- **Figma Multiplayer Guided Tour**: Interactive cursor with live typing speech bubbles navigating through 10 key portfolio sections.
+- **App Store Project Detail Pages**: Complete with category strips, device preview mockups, problem statements, and technical deep dives.
+- **Simulated Telegram Showcase**: Live interactive simulation of the CSE Market Intelligence & Alert Bot inside a custom CSS iPhone frame.
+- **Quick Blog Showcase**: Real screenshots captured from the live deployment (`https://quick-blog-flame.vercel.app`) and optimized to WebP.
+- **Circular Theme Reveal**: Smooth dark/light mode toggle with circular reveal transition via the View Transitions API.
+- **GitHub Contribution Matrix**: Server-rendered and cached via GitHub GraphQL API with 1-hour ISR revalidation.
+
+---
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router, Static Generation)
+- **Language**: TypeScript (`strict: true`)
+- **Styling**: Tailwind CSS, CSS Variables for theming
+- **Animation**: GSAP (`gsap`, `@gsap/react`, `ScrollTrigger`, `TextPlugin`, `Flip`, `ScrollToPlugin`)
+- **Carousel**: `embla-carousel-react`
+- **Icons**: `lucide-react` & Custom SVGs
+- **Headless Testing & Capture**: Playwright, Sharp
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
+### 1. Install dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Run the development server
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Production Build
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Environment Variables (Optional)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create a `.env.local` file in the project root:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```env
+# Optional: Personal Access Token for GitHub Contributions GraphQL API
+GITHUB_TOKEN=your_github_token
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deliverables & Documentation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [TODO.md](file:///D:/portfolio-new/TODO.md): Pending external URLs and credentials.
+- [FIDELITY.md](file:///D:/portfolio-new/FIDELITY.md): Verification report comparing against the reference design tokens and layout geometry.
+- [PortfolioInfos.md](file:///D:/portfolio-new/docs/PortfolioInfos.md): Single source of truth for identity and experience data.
