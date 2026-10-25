@@ -5,7 +5,7 @@
 // Spotify's embed plays full songs for visitors logged in to Spotify in that
 // browser, and 30-second previews for everyone else (a Spotify rule).
 export const PLAYLIST_URL =
-  'https://open.spotify.com/playlist/5SoSQBCRwoNioWJxi4Q3WY?si=qD8KaCmuRzys80TDmhpVOQ&utm_source=copy-link&pi=GOrC3JIpRx-E9';
+  'https://open.spotify.com/playlist/7ngnuMmISdHyKPQhsTKJux';
 
 function playlistId(url = PLAYLIST_URL): string | null {
   return url.match(/playlist[/:]([A-Za-z0-9]{10,})/)?.[1] ?? null;
