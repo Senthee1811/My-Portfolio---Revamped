@@ -51,22 +51,4 @@ export const achievements: Achievement[] = [
     ],
     featured: 2,
   },
-  {
-    id: 'pafolios-potd',
-    title: 'Portfolio of the Day',
-    issuer: 'Pafolios',
-    date: '2026',
-    kind: 'award',
-    description:
-      'Recognized as Portfolio of the Day in the Software Developer category on Pafolios for interactive multi-column engineering.',
-    href: 'https://pafolios.com',
-    hrefLabel: 'View on Pafolios',
-    image: '/images/projects/matchmystuff/AuthPageSS.png',
-    imageVariant: 'browser',
-    facts: [
-      { value: 'POTD', label: 'Portfolio of the Day' },
-      { value: 'Dev', label: 'Software Developer category' },
-    ],
-    featured: 3,
-  },
 ];
