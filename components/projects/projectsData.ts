@@ -55,8 +55,9 @@ export const projects: Project[] = [
   {
     slug: 'matchmystuff',
     title: 'MatchMyStuff',
-    image: '/images/projects/cse/CSE.Dashboard.jpeg',
+    image: '/images/projects/matchmystuff/AuthPageSS.png',
     video: '/videos/projects/matchmystuff/demo.mp4',
+    logo: '/images/projects/matchmystuff/icon.jpeg',
     tags: ['AI', 'Convex', 'Next.js'],
     icon: Sparkles,
     iconBg: '#3B82F6',
@@ -65,7 +66,7 @@ export const projects: Project[] = [
       'AI-powered lost-and-found platform that uses vector search to match lost-item reports with found-item listings, improving match accuracy and speed. Built in 24 hours at the Cursor Buildathon (3rd Place).',
     date: '2025',
     galleryVariant: 'devices',
-    gallery: ['/images/projects/cse/CSE.Dashboard.jpeg'],
+    gallery: ['/images/projects/matchmystuff/AuthPageSS.png'],
     features: [
       'Semantic vector search indexing descriptions to automatically match lost reports against found listings',
       'Instant real-time reactive sync across all clients powered by Convex backend',
@@ -189,7 +190,7 @@ export const projects: Project[] = [
   {
     slug: 'emotional-story-assistive-system',
     title: 'Emotional Story Assistive System',
-    image: '/images/me/portfolio-hero.png',
+    image: '/images/projects/emotional-story/hero.jpeg',
     tags: ['Research', 'PyTorch', 'Microservices'],
     icon: BrainCircuit,
     iconBg: '#8B5CF6',
@@ -197,7 +198,7 @@ export const projects: Project[] = [
       'Final-year IT research project: modular assistive platform designed for visually and hearing-impaired children featuring facial emotion detection, neural Coqui TTS expressive speech synthesis, and sign translation.',
     date: '2025 – 2026',
     galleryVariant: 'devices',
-    gallery: ['/images/me/portfolio-hero.png'],
+    gallery: ['/images/projects/emotional-story/hero.jpeg'],
     features: [
       'Neural emotional Text-to-Speech engine built with Coqui TTS and PyTorch fine-tuned to modulate prosody and cadence',
       'Facial expression recognition determining user engagement to adapt storytelling pacing dynamically',
