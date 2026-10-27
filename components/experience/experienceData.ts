@@ -9,7 +9,7 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
-    period: 'Jan 2026 – Present',
+    period: 'Jan 2026 – April 2026',
     company: 'KFM Studio',
     role: 'Freelance Full-Stack Developer',
     current: true,
@@ -18,7 +18,7 @@ export const experiences: Experience[] = [
   },
   {
     period: 'Apr 2025 – Oct 2025',
-    company: 'Print Care',
+    company: 'PRINTCARE PREMEDIA SERVICES LTD',
     role: 'Full-Stack Developer Intern',
   },
   {
