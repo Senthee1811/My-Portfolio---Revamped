@@ -2,7 +2,8 @@ export type Tech = {
   name: string;
   icon: string;
   // Monochrome logos need to flip with the theme so they stay visible.
-  tone?: 'black' | 'white';
+  // 'brand-hover' logos show monochrome (black in light mode, white in dark mode) and turn full brand color on hover.
+  tone?: 'black' | 'white' | 'brand-hover';
 };
 
 export type TechGroup = { label: string; items: Tech[] };
@@ -37,6 +38,7 @@ export const techGroups: TechGroup[] = [
       { name: 'MySQL', icon: I('mysql.svg') },
       { name: 'Supabase', icon: I('supabase.svg'), tone: 'black' },
       { name: 'Firebase', icon: I('firebase.svg'), tone: 'black' },
+      { name: 'Nest.js', icon: I('nestjs.svg'), tone: 'brand-hover' },
     ],
   },
   {

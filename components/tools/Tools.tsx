@@ -3,7 +3,10 @@ import { tech, techGroups } from './techData';
 
 // Colored logos: greyscale by default, full color on hover.
 // Monochrome logos: flip with the theme so they stay visible.
-function toneClass(tone?: 'black' | 'white') {
+function toneClass(tone?: 'black' | 'white' | 'brand-hover', name?: string) {
+  if (tone === 'brand-hover' || (name === 'Nest.js' && tone === 'black')) {
+    return 'brightness-0 dark:invert group-hover:filter-none';
+  }
   if (tone === 'black') return 'dark:invert';
   if (tone === 'white') return 'invert dark:invert-0';
   return 'grayscale group-hover:grayscale-0';
@@ -47,6 +50,7 @@ export default function Tools() {
                       unoptimized
                       className={`object-contain opacity-80 transition duration-300 group-hover:opacity-100 ${toneClass(
                         t.tone,
+                        t.name,
                       )}`}
                     />
                   </span>
