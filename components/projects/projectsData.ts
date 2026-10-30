@@ -6,6 +6,7 @@ import {
   Camera,
   Layers,
   Bot,
+  FileSearch,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -53,6 +54,71 @@ export type CaseStudy = {
 
 export const projects: Project[] = [
   {
+    slug: 'docmind-ai',
+    title: 'DocMindAI',
+    image: '/images/projects/docmind/01-chat-qa.webp',
+    tags: ['AI', 'Next.js', 'NestJS', 'PostgreSQL', 'RAG'],
+    icon: FileSearch,
+    iconBg: '#6366F1',
+    featured: 1,
+    href: 'https://github.com/Senthee1811/DocMind',
+    sourceHref: 'https://github.com/Senthee1811/DocMind',
+    links: [
+      { label: 'GitHub', href: 'https://github.com/Senthee1811/DocMind' },
+    ],
+    description:
+      'Full-stack source-grounded RAG application for querying PDFs with page-cited answers. Employs hybrid retrieval combining pgvector dense semantic search and PostgreSQL full-text search with Reciprocal Rank Fusion (RRF), running entirely on local Ollama models with zero paid APIs.',
+    date: '2026',
+    galleryVariant: 'devices',
+    gallery: [
+      '/images/projects/docmind/01-chat-qa.webp',
+      '/images/projects/docmind/02-knowledge-library.webp',
+      '/images/projects/docmind/03-ask-docmind.webp',
+    ],
+    features: [
+      'Hybrid retrieval engine combining pgvector dense semantic embeddings with PostgreSQL full-text search re-ranked via Reciprocal Rank Fusion (RRF)',
+      'Source-grounded PDF query responses with verbatim quotes and clickable citation chips to verify exact source pages',
+      'Asynchronous document ingestion pipeline built with Redis and BullMQ featuring real-time status tracking and automated retries',
+      'JWT authentication with robust per-user document isolation and access control',
+      'Evaluation dashboard tracking Hit@K, MRR, citation-page accuracy, abstention accuracy, and latency benchmarks (p50 2.3s / p95 4.5s)',
+      'Self-hosted AI architecture powered by local Ollama models with zero reliance on paid external APIs',
+    ],
+    caseStudy: {
+      role: 'Full-Stack & AI/RAG Engineer',
+      timeline: '2026',
+      stack: [
+        'Next.js',
+        'NestJS',
+        'PostgreSQL',
+        'pgvector',
+        'Redis',
+        'BullMQ',
+        'Ollama',
+        'TypeScript',
+        'Tailwind CSS',
+      ],
+      numbers: [
+        { value: 'Hybrid', label: 'pgvector + Postgres FTS' },
+        { value: 'p50 2.3s', label: 'E2E local query latency' },
+        { value: '100%', label: 'Local with Ollama' },
+      ],
+      highlights: [
+        {
+          title: 'Hybrid Retrieval & Reciprocal Rank Fusion',
+          body: 'Combines dense vector embeddings in pgvector with sparse full-text lexical search in PostgreSQL, re-ranked via Reciprocal Rank Fusion to deliver precise, citation-backed answers without hallucination.',
+        },
+        {
+          title: 'Asynchronous Ingestion Pipeline',
+          body: 'Handles heavy PDF parsing, chunking, and embedding generation asynchronously using Redis queues and BullMQ workers with retry policies and real-time status updates.',
+        },
+        {
+          title: 'Rigorous RAG Evaluation & Benchmarking',
+          body: 'Built-in evaluation metrics monitor retrieval effectiveness (Hit@K, MRR), citation page accuracy, model abstention fidelity, and latency percentiles on local Ollama models.',
+        },
+      ],
+    },
+  },
+  {
     slug: 'matchmystuff',
     title: 'MatchMyStuff',
     image: '/images/projects/matchmystuff/AuthPageSS.png',
@@ -61,7 +127,13 @@ export const projects: Project[] = [
     tags: ['AI', 'Convex', 'Next.js'],
     icon: Sparkles,
     iconBg: '#3B82F6',
-    featured: 1,
+    featured: 2,
+    href: 'https://matchmystuff.vercel.app/',
+    sourceHref: 'https://github.com/kishgi/matchmystuff.git',
+    links: [
+      { label: 'GitHub', href: 'https://github.com/kishgi/matchmystuff.git' },
+      { label: 'Live Demo', href: 'https://matchmystuff.vercel.app/' },
+    ],
     description:
       'AI-powered lost-and-found platform that uses vector search to match lost-item reports with found-item listings, improving match accuracy and speed. Built in 24 hours at the Cursor Buildathon (3rd Place).',
     date: '2025',
@@ -103,7 +175,11 @@ export const projects: Project[] = [
     iconBg: '#10B981',
     href: 'https://quick-blog-flame.vercel.app/',
     sourceHref: 'https://github.com/Senthee1811/QuickBlog',
-    featured: 2,
+    links: [
+      { label: 'GitHub', href: 'https://github.com/Senthee1811/QuickBlog' },
+      { label: 'Live Demo', href: 'https://quick-blog-flame.vercel.app/' },
+    ],
+    featured: 3,
     description:
       'Full-stack content management system featuring an AI writing assistant powered by Google Gemini that generates comprehensive long-form blog content from user titles with real-time editing.',
     date: '2025',
@@ -151,7 +227,11 @@ export const projects: Project[] = [
     tags: ['Python', 'AI', 'Automation'],
     icon: TrendingUp,
     iconBg: '#F59E0B',
-    featured: 3,
+    featured: 4,
+    sourceHref: 'https://github.com/Senthee1811/CSE_Summary_Telegram_Bot.git',
+    links: [
+      { label: 'GitHub', href: 'https://github.com/Senthee1811/CSE_Summary_Telegram_Bot.git' },
+    ],
     description:
       'Automated financial intelligence bot for the Colombo Stock Exchange aggregating daily price movements and volume breakouts, coupled with AI-synthesized market summaries via Gemini 2.5 Flash-Lite.',
     date: '2025',
@@ -194,6 +274,10 @@ export const projects: Project[] = [
     tags: ['Research', 'PyTorch', 'Microservices'],
     icon: BrainCircuit,
     iconBg: '#8B5CF6',
+    sourceHref: 'https://github.com/Senthee1811/Emotional-Assistive-Storyteller.git',
+    links: [
+      { label: 'GitHub', href: 'https://github.com/Senthee1811/Emotional-Assistive-Storyteller.git' },
+    ],
     description:
       'Final-year IT research project: modular assistive platform designed for visually and hearing-impaired children featuring facial emotion detection, neural Coqui TTS expressive speech synthesis, and sign translation.',
     date: '2025 – 2026',

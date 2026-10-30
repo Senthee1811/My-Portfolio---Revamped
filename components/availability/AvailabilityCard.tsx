@@ -6,7 +6,7 @@ import { Download, MessageCircle } from 'lucide-react';
 // Edit these to change what clients see.
 const STATUS = 'Open to junior SWE roles & freelance projects';
 const REPLY_TIME = 'Usually replies within a day';
-const CV_HREF = '/cv/Sentheepan_Ellankovan_CV.pdf';
+const CV_HREF = '/cv/Sentheepan_Ellankovan.pdf';
 const MESSAGE_HREF = 'https://api.whatsapp.com/send?phone=94762587540';
 const TIME_ZONE = 'Asia/Colombo';
 
@@ -73,7 +73,7 @@ export default function AvailabilityCard() {
           <a
             href={CV_HREF}
             data-say="Grab my CV 📄"
-            download
+            download="Sentheepan_Ellankovan.pdf"
             className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-[var(--foreground)] px-3 py-2 text-sm font-semibold text-[var(--background)] transition-opacity hover:opacity-90"
           >
             <Download className="h-4 w-4" />

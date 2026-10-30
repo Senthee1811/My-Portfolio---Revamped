@@ -170,21 +170,23 @@ export default async function ProjectPage({
             <div className="flex flex-col gap-4 rounded-2xl border bg-[var(--muted)] p-5 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-lg font-bold tracking-tight text-[var(--foreground)]">
-                  Want a portfolio like this?
+                  {project.slug === 'portfolio' ? 'Want a portfolio like this?' : 'Open Source on GitHub'}
                 </p>
                 <p className="mt-1 text-sm leading-relaxed text-[var(--muted-foreground)]">
-                  It’s open source. Fork it on GitHub, swap in your own projects and make it yours.
+                  {project.slug === 'portfolio'
+                    ? 'It’s open source. Fork it on GitHub, swap in your own projects and make it yours.'
+                    : `Explore the source code, architecture, and documentation for ${project.title} on GitHub.`}
                 </p>
               </div>
               <a
                 href={project.sourceHref}
-                data-say="Fork it on GitHub 🍴"
+                data-say={project.slug === 'portfolio' ? 'Fork it on GitHub 🍴' : `View ${project.title} on GitHub 🐙`}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[var(--foreground)] px-5 py-2.5 text-sm font-semibold text-[var(--background)] transition-opacity hover:opacity-85"
               >
                 <Github className="h-4 w-4" />
-                Use this portfolio
+                {project.slug === 'portfolio' ? 'Use this portfolio' : 'View on GitHub'}
                 <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
